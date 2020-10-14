@@ -17,21 +17,30 @@ public class TextType implements AbstractType<String> {
 
     @Override
     public void serialize(String value, DataOutput out) throws IOException {
-        throw new RuntimeException("Not implemented");
+        // For the sake of simplicity, I am assuming that neither the variable 'value' nor the variable 'out'
+        // has the value null.
+
+        out.writeBytes(value);
     }
 
     @Override
     public int sizeof(String value) {
-        throw new RuntimeException("Not implemented");
+        // For the sake of simplicity, I am assuming the value of the variable 'value' is not null.
+
+        return value.getBytes().length;
     }
 
     @Override
     public String deserialize(DataInput in) throws IOException {
-        throw new RuntimeException("Not implemented");
+        // For the sake of simplicity, I am assuming the value of the variable 'in' is not null.
+
+        String line = in.readLine();
+
+        return line != null ? line : "";
     }
 
     @Override
     public boolean isFixedSize() {
-        throw new RuntimeException("Not implemented");
+        return false;
     }
 }
