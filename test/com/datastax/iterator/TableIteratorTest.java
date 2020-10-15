@@ -1,6 +1,5 @@
 package com.datastax.iterator;
 
-import com.datastax.iterator.TableIterator;
 import com.datastax.metadata.Schema;
 import com.datastax.rows.Row;
 import com.datastax.serde.IntType;
